@@ -5,24 +5,17 @@ let cors = require('cors');
 let app = express();
 app.use(cors());
 
-app.get('/', (req, res) => {
-	let reply = {
-		"Message" : "No endpoint"
-	}
-	res.send(reply);
-})
+/* === Store Data Here === */
+let retail;
+let wholesale;
 
-app.get('/whole', (req, res) => {
-	let url = "http://kalimatimarket.gov.np/home/wpricelist"
-	getData(url, res);
-})
+function getData(res, option) {
+	let url;
+	if(option == 1)
+		url = "http://kalimatimarket.gov.np/home/rpricelist";
+	else
+		url = "http://kalimatimarket.gov.np/home/wpricelist";
 
-app.get('/retail', (req, res) => {
-	let url = "http://kalimatimarket.gov.np/home/rpricelist";
-	getData(url, res);
-})
-
-function getData(url, res) {
 	request(url, (error, response, body)=> {
 	    let data = [];
 
@@ -36,14 +29,24 @@ function getData(url, res) {
 	    	data.push(temp);
 	    });
 
-	    let reply = {
-	    	length	: data.length,
-	    	items	: data
-	    }
-
-	    res.send(reply);
+	    if(option == 1)
+	    	retail = data;
+	    else
+	    	wholesale = data;
 	});
 }
 
-console.log('Server Up and running!');
+app.get('/', (req, res) => {
+	getData(res, 1);
+	getData(res, 0);
+
+	let reply = {
+		"retail"	: retail,
+		"wholesale"	: wholesale
+	}
+
+	res.send(reply);
+})
+
+console.log('Server Up and running on PORT 3000!');
 app.listen(process.env.PORT || 3000);
