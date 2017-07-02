@@ -5,6 +5,13 @@ let cors = require('cors');
 let app = express();
 app.use(cors());
 
+app.get('/', (req, res) => {
+	let reply = {
+		"Message" : "No endpoint"
+	}
+	res.send(reply);
+})
+
 app.get('/whole', (req, res) => {
 	let url = "http://kalimatimarket.gov.np/home/wpricelist"
 	getData(url, res);
