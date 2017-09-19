@@ -2,30 +2,26 @@
 
 An Api for vegetable rates of Kalimait, Nepal
 
-## Getting Started
+## Installing
 
-```
+```console
 npm install kalimati-rate
 ```
-## Import 
+## Usage 
 
-```
+```js
 const Kalimati = require('kalimati-rate');
-```
 
-```
 Kalimati.retail().then((retail_price) => {
-    console.log(retail_price)
-})
-```
+    console.log(retail_price);
+});
 
-```
 Kalimati.wholesale().then((wholesale_price) => {
-    console.log(wholesale_price)
-})
+    console.log(wholesale_price);
+});
 ```
 
-## Authors
+## Author
 
 * **Aditya Thebe** - *@adityathebe* - [Blog](http://adityathebe.com)
 
