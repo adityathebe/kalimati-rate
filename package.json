@@ -1,8 +1,12 @@
 {
-  "name": "vegrate",
+  "name": "kalimati-rate",
   "version": "1.0.0",
-  "description": "Kalimati Vegetable Rates",
-  "main": "index.js",
+  "description": "An API for Vegetable Rates of Kalimati, Nepal",
+  "main": "kalimati.js",
+  "keywords": [
+    "kalimati",
+    "nepal"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,7 +16,10 @@
     "cheerio": "^1.0.0-rc.1",
     "cors": "^2.8.3",
     "express": "^4.15.3",
-    "querystring": "^0.2.0",
     "request": "^2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adityathebe/kalimati-rate.git"
   }
 }
