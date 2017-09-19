@@ -1,0 +1,21 @@
+{
+  "name": "vegrate",
+  "version": "1.0.1",
+  "description": "AN API for vegetable rate of Kalimait, Nepal",
+  "main": "kalimati.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aditya Thebe <me@adityathebe.com> (http://adityathebe.com)",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.1",
+    "cors": "^2.8.3",
+    "express": "^4.15.3",
+    "request": "^2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adityathebe/kalimati-rate.git"
+  }
+}
