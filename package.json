@@ -1,6 +1,6 @@
 {
   "name": "kalimati-rate",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An API for Vegetable Rates of Kalimati, Nepal",
   "main": "kalimati.js",
   "keywords": [
